@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Component</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        #root {
+          text-align: center;
+        }
+        .container {
+          text-align: center;
+          font-size: 30px;
+          border: 2px dotted rgb(105, 105, 247);
+          width:500px;
+          height:100px;
+          background-image: linear-gradient(to right, rgb(239, 235, 114) , rgb(120, 207, 242));
+    
+        }
+      </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Greeting({ message, name }) {
+      return (
+        <p>
+          {message}, {name}
+        </p>
+      );
+    }
+
+    const element = (
+      <div className="container">
+        <Greeting message="Hello" name="Alice" />
+      </div>
+    );
+
+    // Rendering the element in a React application
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+    reactRoot.render(element);
+  </script>
+</html>
