@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Children props</title>
+  
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Creating a React element
+    let element = document.getElementById("root");
+
+    // Gallery Component
+    function Gallery({ children }) {
+      return (
+        <div
+         style={{ display: 'grid',
+        //   gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 3fr))',
+             gridTemplateColumns: "repeat(3,200px)",
+            justifyContent : "center",
+            gap:"20px",
+            width:"100%",
+            margin:"auto",
+            marginTop:"10%"
+            
+
+         }}>
+          {children}
+        </div>
+
+       
+      );
+    }
+
+    // Image Component
+    function Image({ src }) {
+      return <img src={src} alt="gallery-image"
+       style={{ maxWidth: '80%',
+        height: 'auto' ,
+        borderRadius:"50%",
+        boxShadow:" rgba(3, 102, 214, 0.3) 0px 0px 0px 3px"
+    }} />;
+    }
+
+    // Example usage
+    ReactDOM.createRoot(element).render(
+      <Gallery>
+        <Image src="https://images.pexels.com/photos/46216/sunflower-flowers-bright-yellow-46216.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/460775/pexels-photo-460775.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/1369068/pexels-photo-1369068.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/69776/tulips-bed-colorful-color-69776.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/460775/pexels-photo-460775.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/46216/sunflower-flowers-bright-yellow-46216.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        <Image src="https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=600" />
+       
+      </Gallery>
+    );
+  </script>
+</body>
+</html>
